@@ -1,0 +1,6 @@
+Flask==2.3.3
+gunicorn==21.2.0
+numpy==1.26.1
+scikit-learn==1.4.2
+Jinja2==3.1.2
+Werkzeug==2.3.7

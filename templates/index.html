@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form{
+            padding-top: 400px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+        }
+        button {
+            background: #2575fc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #1a5cc1;
+        }
+        p {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <form action="/predict" method="POST">
+            <h1>Heart Disease Prediction</h1>
+            <label for="age">Age:</label>
+            <input type="number" step="any" name="age" id="age" required>
+            
+            <label for="sex">Sex (0 = Female, 1 = Male):</label>
+            <input type="number" step="any" name="sex" id="sex" required>
+            
+            <label for="cp">Chest Pain Type (0-3):</label>
+            <input type="number" step="any" name="cp" id="cp" required>
+            
+            <label for="trestbps">Resting Blood Pressure:</label>
+            <input type="number" step="any" name="trestbps" id="trestbps" required>
+            
+            <label for="chol">Cholesterol:</label>
+            <input type="number" step="any" name="chol" id="chol" required>
+            
+            <label for="fbs">Fasting Blood Sugar (0 or 1):</label>
+            <input type="number" step="any" name="fbs" id="fbs" required>
+            
+            <label for="restecg">Resting ECG (0-2):</label>
+            <input type="number" step="any" name="restecg" id="restecg" required>
+            
+            <label for="thalach">Max Heart Rate Achieved:</label>
+            <input type="number" step="any" name="thalach" id="thalach" required>
+            
+            <label for="exang">Exercise-Induced Angina (0 or 1):</label>
+            <input type="number" step="any" name="exang" id="exang" required>
+            
+            <label for="oldpeak">Oldpeak:</label>
+            <input type="number" step="any" name="oldpeak" id="oldpeak" required>
+            
+            <label for="slope">Slope (0-2):</label>
+            <input type="number" step="any" name="slope" id="slope" required>
+            
+            <label for="ca">Number of Major Vessels (0-3):</label>
+            <input type="number" step="any" name="ca" id="ca" required>
+            
+            <label for="thal">Thal (0-2):</label>
+            <input type="number" step="any" name="thal" id="thal" required>
+            
+            <button type="submit">Predict</button>
+        </form>
+        <p>{{ prediction_text }}</p>
+    </div>
+</body>
+</html>
